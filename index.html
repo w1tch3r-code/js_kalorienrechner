@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-Vertiefung – Project Kalorien-Rechner</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="calories__calculator__wrapper">
+            <h1>Kalorienrechner</h1>
+            <form>
+                <div>
+                    <label for="height">Körpergröße in cm</label>
+                    <input type="number" id="height" name="height" min="1" value="0">
+                </div>
+                <div>
+                    <label for="age">Alter in Jahren</label>
+                    <input type="number" id="age" name="age" min="1" value="0">
+                </div>
+                <div>
+                    <label for="weight">Gewicht in kg</label>
+                    <input type="number" id="weight" name="weight" min="1" value="0">
+                </div>
+                <div class="radio">
+                    <input type="radio" id="female" name="gender" value="female" checked>
+                    <label for="female"> Weiblich</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male"> Männlich</label>
+                </div>
+                <div class="select">
+                    <select name="physicalStress" id="physicalStress">
+                        <option selected disabled value="disabled">Körperliche Belastung</option>
+                        <option value="0.95" title="(PAL-Faktor: 0,95) Schlafen">Schlafen</option>
+                        <option value="1.2" title="(PAL-Faktor: 1,20) Nur sitzen oder liegen">Nur sitzen oder liegen</option>
+                        <option value="1.5" title="(PAL-Faktor: 1,50) Ausschließlich sitzende Tätigkeit mit wenig oder keiner körperlichen Aktivität in der Freizeit, z. B. Büroarbeit">Ausschließlich sitzende Tätigkeit</option>
+                        <option value="1.7" title="(PAL-Faktor: 1,70) Sitzende Tätigkeit mit zeitweilig gehender oder stehender Tätigkeit, z. B. Studierende, Fließbandarbeiter, Laboranten, Kraftfahrer">Sitzende Tätigkeit mit zeitweilig gehender oder stehender Tätigkeit</option>
+                        <option value="1.9" title="(PAL-Faktor: 1,90) Überwiegend gehende oder stehender Tätigkeit, z. B. Verkäufer, Kellner, Handwerker, Mechaniker, Hausfrauen">Überwiegend gehende oder stehende Tätigkeit</option>
+                        <option value="2.2" title="(PAL-Faktor: 2,20) Körperlich anstrengende berufliche Arbeit">Körperlich anstrengende berufliche Arbeit
+                        </option>
+                    </select>
+                </div>
+                <div class="calc"><input type="submit" value="Berechnen" id="btnCalc"></div>
+            </form>
+            <div id="inputErrorOutput"></div>
+            <div id="selectErrorOutput"></div>
+            <div class="output" id="output">
+                <p>&nbsp;</p>
+                <p>kcal</p>
+                <p>kJ</p>
+                <p>Grundumsatz</p>
+                <p id="basalMetabolismKcal">0</p>
+                <p id="basalMetabolismKj">0</p>
+                <p>Gesamtumsatz</p>
+                <p id="totalMetabolismKcal">0</p>
+                <p id="totalMetabolismKj">0</p>
+            </div>
+        </section>
+    </div>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

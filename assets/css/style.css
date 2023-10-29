@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+/* ========================================================== 
+                            Resets
+========================================================== */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+/* ========================================================== 
+                            Fonts
+========================================================== */
+
+@font-face {
+	font-family: "Lato";
+	src: url("./../fonts/Lato-Regular.ttf");
+}
+
+/* ========================================================== 
+                        Body und Wrapper
+========================================================== */
+
+body {
+	font-family: "Lato";
+	background-color: #0d1117;
+	scroll-behavior: smooth;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.wrapper {
+	width: clamp(350px, 50%, 550px);
+	margin: 0 auto;
+	border-radius: 10px;
+	background-color: #d3d3d3;
+}
+
+.calories__calculator__wrapper {
+	padding: 20px;
+}
+
+/* ========================================================== 
+                            Content
+========================================================== */
+
+h1 {
+	font-size: 2rem;
+	padding-block-end: 20px;
+}
+
+label {
+	font-weight: 600;
+	padding-bottom: 10px;
+	display: inline-block;
+}
+input,
+select {
+	font-weight: 600;
+	font-size: 1rem;
+	border-radius: 5px;
+}
+
+input[type="number"] {
+	border-radius: 4px;
+	position: relative;
+	outline: none;
+	background: url('./../images/number_arrows.svg') center right / contain no-repeat;
+	caret-color: #892ddd;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+	-moz-appearance: none !important;
+	-webkit-appearance: none !important;
+	appearance: none !important;
+	opacity: 1 !important;
+	background: transparent !important;
+	border-width: 0px;
+	margin: 0;
+	border-left: 2px solid #892ddd;
+	height: 40px;
+	width: 17px;
+	cursor: pointer;
+}
+
+div.radio {
+	display: flex;
+	padding-block: 15px;
+	margin-bottom: 10px;
+}
+
+div.radio label {
+	padding-inline: 10px;
+	padding-block: 5px;
+}
+
+select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	font-size: 1rem;
+	background-image: linear-gradient(white, #ccb5e1);
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 2px solid #892ddd;
+	width: 100%;
+	outline: none;
+	padding-inline-end: 60px;
+}
+
+select option[value="disabled"] {
+	background: rgba(0, 0, 0, 0.3);
+	font-weight: 600;
+	font-size: 1.1rem;
+}
+
+select option:checked {
+	background: #892ddd;
+	color: white;
+}
+
+select option:not(:checked) {
+	background: #ccb5e1;
+}
+
+.select:after {
+	content: "\25BC";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 10px;
+	background: #892ddd;
+	color: #fff;
+	padding: 11px 15px;
+	pointer-events: none;
+	border-radius: 5px;
+}
+.select {
+	position: relative;
+}
+
+input:not(input[type="radio"]) {
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 2px solid #892ddd;
+	width: 100%;
+	background-color: #f4ebfc;
+}
+
+input[type="radio"] {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	width: 30px;
+	height: 30px;
+	background: url("./../images/radio_unchecked.png") center / contain
+		no-repeat;
+	border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+	background: url("./../images/radio_checked.png") center / contain no-repeat;
+}
+
+div input[type="submit"] {
+	padding: 15px;
+	background: #892ddd;
+	color: white;
+	font-weight: bold;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	margin: 10px 0 20px 0;
+	cursor: pointer;
+}
+
+.output {
+	display: grid;
+	grid-template-columns: 45% repeat(2, 1fr);
+	grid-template-rows: repeat(3, 30px);
+	color: white;
+	font-weight: 900;
+	background-color: #9d57da;
+	gap: 10px;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 1.1rem;
+	overflow: hidden;
+}
+
+.output > p:nth-child(9n + 1),
+.output > p:nth-child(9n + 2),
+.output > p:nth-child(9n + 3) {
+	background: #892ddd;
+	padding-block-start: 10px;
+	padding-inline: 10px;
+	max-width: 450px;
+	margin-inline: -10px;
+	margin-block-start: -10px;
+}
+
+#inputErrorOutput,
+#selectErrorOutput {
+	text-align: center;
+	font-size: 1.1rem;
+	background-image: linear-gradient(white, #ccb5e1);
+	border-radius: 5px;
+	padding: 10px;
+	margin-bottom: 20px;
+	display: none;
+}
